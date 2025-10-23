@@ -1,0 +1,175 @@
+
+.details-container {
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #0d2d46; 
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.back-button i {
+    margin-right: 5px;
+    font-size: 1rem;
+}
+
+.pet-details-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.details-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16/12; 
+}
+
+.details-content {
+    padding: 20px;
+}
+
+.pet-name-details {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.pet-breed {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0d2d46; 
+    margin-top: 25px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.description {
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.pet-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.tag i {
+    margin-right: 5px;
+    font-size: 0.9rem;
+}
+
+
+.tag-macho {
+    background-color: #eee;
+    color: #0d2d46;
+}
+.tag-adulto {
+    background-color: #fff0e0;
+    color: #cc7a00;
+}
+.tag-porte {
+    background-color: #eee;
+    color: #0d2d46;
+}
+.tag-localizacao {
+    background-color: #fff0e0;
+    color: #cc7a00;
+}
+
+
+.characteristics-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.characteristics-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.characteristics-list li:last-child {
+    border-bottom: none;
+}
+
+.characteristics-list i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+
+.characteristics-list .fa-check-circle {
+    color: #4CAF50; 
+}
+
+
+.characteristics-list .fa-cat {
+    color: #D32F2F; 
+}
+
+
+.cta-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.shelter-info {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.adoption-cta {
+    background-color: #ff9900; 
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    transition: background-color 0.2s;
+}
+
+.adoption-cta:hover {
+    background-color: #e68a00;
+}
