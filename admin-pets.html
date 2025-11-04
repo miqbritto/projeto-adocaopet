@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Pets - Adote Já</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/assets/admin-dashboard.css">
+    <link rel="stylesheet" href="/assets/admin-pets.css"> 
+</head>
+
+
+<body>
+
+    <div class="admin-layout">
+        
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-paw"></i>
+                <h3>ADOTE JÁ ADMIN</h3>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    
+                    <li class="active"><a href="admin-pets.html"><i class="fas fa-dog"></i> Gestão de Pets</a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i> Candidaturas</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Equipe</a></li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="index.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </aside>
+
+        <main class="dashboard-content">
+            <header class="dashboard-topbar">
+                <h1>Gestão de Pets</h1>
+                <div class="user-profile">
+                    Olá, Administrador
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </header>
+            
+            <section class="pet-management">
+                <div class="management-header">
+                    <h2>Lista de Animais Cadastrados</h2>
+                    <button class="add-pet-button" id="openNewPetModal">
+                        <i class="fas fa-plus"></i> Novo Pet
+                    </button>
+
+                    
+                </div>
+                
+                <div class="pet-table-container">
+                    <table class="pet-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Espécie</th>
+                                <th>Porte</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>101</td>
+                                <td>Frodo</td>
+                                <td>Cão</td>
+                                <td>Médio</td>
+                                <td><span class="status status-active">ATIVO</span></td>
+                                <td>
+                                    <button class="action-btn btn-edit open-edit-modal" title="Editar" data-pet-id="101"><i class="fas fa-pencil-alt"></i></button>
+                                    <button class="action-btn btn-delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>102</td>
+                                <td>Vênus</td>
+                                <td>Gato</td>
+                                <td>Pequeno</td>
+                                <td><span class="status status-active">ATIVO</span></td>
+                                <td>
+                                    <button class="action-btn btn-edit open-edit-modal" title="Editar" data-pet-id="102"><i class="fas fa-pencil-alt"></i></button>
+                                    <button class="action-btn btn-delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>103</td>
+                                <td>Thor</td>
+                                <td>Cão</td>
+                                <td>Grande</td>
+                                <td><span class="status status-adopted">ADOTADO</span></td>
+                                <td>
+                                    <button class="action-btn btn-edit open-edit-modal" title="Editar" data-pet-id="103"><i class="fas fa-pencil-alt"></i></button>
+                                    <button class="action-btn btn-delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <div class="pet-form-modal" id="petModal">
+            <div class="pet-form-content">
+                <div class="form-header">
+                    <h2>Cadastrar Novo Pet</h2>
+                    <button class="close-form-btn" id="closeModalButton">&times;</button> 
+                    
+                </div>
+
+                <form class="pet-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="pet-name">Nome do Pet</label>
+                            <input type="text" id="pet-name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pet-species">Espécie</label>
+                            <select id="pet-species" name="species" required>
+                                <option value="" disabled selected>Selecione</option>
+                                <option value="cao">Cão</option>
+                                <option value="gato">Gato</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pet-size">Porte</label>
+                            <select id="pet-size" name="size" required>
+                                <option value="" disabled selected>Selecione</option>
+                                <option value="pequeno">Pequeno</option>
+                                <option value="medio">Médio</option>
+                                <option value="grande">Grande</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pet-gender">Sexo</label>
+                            <select id="pet-gender" name="gender" required>
+                                <option value="" disabled selected>Selecione</option>
+                                <option value="macho">Macho</option>
+                                <option value="femea">Fêmea</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pet-age">Idade Aproximada</label>
+                            <input type="text" id="pet-age" name="age" placeholder="Ex: 2 anos, Filhote" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pet-location">Localização/Abrigo</label>
+                            <input type="text" id="pet-location" name="location" placeholder="Ex: São Paulo/SP" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="pet-description">Descrição Completa</label>
+                        <textarea id="pet-description" name="description" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="pet-photo">Foto Principal</label>
+                        <input type="file" id="pet-photo" name="photo" accept="image/*" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Status de Adoção</label>
+                        <div class="radio-group">
+                            <input type="radio" id="status-active" name="status" value="ativo" checked>
+                            <label for="status-active">Ativo (Disponível)</label>
+                            
+                            <input type="radio" id="status-adopted" name="status" value="adotado">
+                            <label for="status-adopted">Adotado</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions full-width">
+                        <button type="submit" class="save-pet-btn">
+                            <i class="fas fa-save"></i> Salvar Pet
+                        </button>
+                        <button type="button" class="cancel-btn" id="cancelModalButton">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        </main>
+    </div>
+<script src="scripts.js"></script>
+</body>
+</html>
